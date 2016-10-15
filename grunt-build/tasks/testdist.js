@@ -26,7 +26,7 @@ grunt.task.registerTask( "testdist", "Test the distributed version", function() 
 			"./dist.sh -i " + ( grunt.option( "ci" ) ? "-n" : "" ) +
 			"&& cd dist/" + packageName +
 			"&& echo '*** Loading high-level API ***'" +
-			"&& node ./index.js" +
+			"&& node -p 'require( \"./index\" ); process.exit( 0 );'" +
 			"&& echo '*** Loading low-level API ***'" +
 			"&& node ./lowlevel.js"
 		],

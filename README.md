@@ -3,9 +3,12 @@
 ## Description
 This project provides a Javascript API for [OCF][] functionality. The API follows a maintained [specification][] and is implemented as a native addon using [iotivity][] as its backend.
 
-## Build status
+## Status
 <a href="https://travis-ci.org/otcshare/iotivity-node">
 	<img alt="Build Status" src="https://travis-ci.org/otcshare/iotivity-node.svg?branch=master"></img>
+</a>
+<a href='https://coveralls.io/github/otcshare/iotivity-node?branch=backed-object'>
+	<img src='https://coveralls.io/repos/github/otcshare/iotivity-node/badge.svg?branch=backed-object' alt='Coverage Status' />
 </a>
 
 ## Installation
