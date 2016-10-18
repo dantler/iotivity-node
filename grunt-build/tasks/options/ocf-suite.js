@@ -14,9 +14,12 @@
 
 var path = require( "path" );
 
-module.exports = function( grunt ) {
-	grunt.registerTask( "turn-on-coverage", "Turn on test coverage", function() {
-		grunt.config.set( "interpreter", path.resolve(
-			path.join( __dirname, "..", "..", "tests", "run-istanbul.sh" ) ) );
-	} );
+module.exports = {
+	plain: {
+		interpreter: "node"
+	},
+	coverage: {
+		interpreter: path.resolve(
+			path.join( __dirname, "..", "..", "..", "tests", "run-istanbul.sh" ) )
+	}
 };

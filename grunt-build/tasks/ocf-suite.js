@@ -17,7 +17,7 @@ module.exports = function( grunt ) {
 var _ = require( "lodash" ),
 	path = require( "path" );
 
-grunt.task.registerTask( "ocf-suite", "Run the OCF test suite", function() {
+grunt.task.registerMultiTask( "ocf-suite", "Run the OCF test suite", function() {
 	var testSuite;
 	var done = this.async();
 
@@ -38,11 +38,8 @@ grunt.task.registerTask( "ocf-suite", "Run the OCF test suite", function() {
 				};
 			} )( testSuite.defaultCallbacks.done )
 		} )
-	} )( _.extend( {},
-	( grunt.config.get( "interpreter" ) ? {
-		interpreter: grunt.config.get( "interpreter" )
-	} : {} ),
-	{
+	} )( _.extend( {}, {
+		interpreter: this.data.interpreter,
 		location: path.resolve( path.join( __dirname, "..", ".." ) )
 	}, grunt.option( "ocf-suites" ) ? {
 		tests: grunt.option( "ocf-suites" ).split( "," )
