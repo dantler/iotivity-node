@@ -22,8 +22,7 @@ grunt.registerTask( "test", [ "lint", "testsuite", "ocf-suite:plain", "testdist"
 
 grunt.registerTask( "format", [ "esformatter", "clangformat" ] );
 
-grunt.registerTask( "coverage",
-	[ "clean:coverage", "ocf-suite:coverage", "makeReport" ] );
+grunt.registerTask( "coverage", [ "clean:coverage", "ocf-suite:coverage", "makeReport" ] );
 
 grunt.registerTask( "publish-coverage", [ "coverage", "coveralls:coverage" ] );
 
