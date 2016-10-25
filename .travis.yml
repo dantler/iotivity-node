@@ -44,35 +44,35 @@ matrix:
     # run, and again in "allowed_failures" to not have them break the build.
     # Below are the allowed failures:
 
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
-      os: osx
-
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
-      os: osx
-
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
-      os: osx
-
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
-      os: osx
-
+#    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
+#      os: osx
+#
+#    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
+#      os: osx
+#
+#    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
+#      os: osx
+#
+#    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
+#      os: osx
+#
     - env: NODE_VERSION=4.5 TEST_SCRIPT=ci-coverage
       os: linux
       addons: *buildpackages
 
   allow_failures:
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
-      os: osx
-
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
-      os: osx
-
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
-      os: osx
-
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
-      os: osx
-
+#    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
+#      os: osx
+#
+#    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
+#      os: osx
+#
+#    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
+#      os: osx
+#
+#    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
+#      os: osx
+#
     - env: NODE_VERSION=4.5 TEST_SCRIPT=ci-coverage
       os: linux
       addons: *buildpackages
