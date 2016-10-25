@@ -20,12 +20,12 @@ var lightResource, device,
 console.log( "Acquiring OCF device" );
 
 device = require( "iotivity-node" );
-device.device = _.extend( device.device, {
+_.extend( device.device, {
 	coreSpecVersion: "res.1.0.0",
 	dataModels: [ "something.1.0.0" ],
 	name: "api-server-example"
 } );
-device.platform = _.extend( device.platform, {
+_.extend( device.platform, {
 	manufacturerName: "Intel",
 	manufactureDate: new Date( "Wed Sep 23 10:04:17 EEST 2015" ),
 	platformVersion: "1.1.1",
@@ -61,7 +61,7 @@ function handleError( theError ) {
 
 var lightResourceRequestHandlers = {
 	retrieve: function( request ) {
-		device.server.respond( request, null, request.target ).catch( handleError );
+		request.respond( request.target ).catch( handleError );
 		if ( "observe" in request ) {
 			observerCount += Math.max( 0, request.observe ? 1 : -1 );
 		}
@@ -73,7 +73,7 @@ if ( device.device.uuid ) {
 	console.log( "Registering OCF resource" );
 
 	device.server.register( {
-		id: { path: "/a/high-level-example" },
+		resourcePath: "/a/high-level-example",
 		resourceTypes: [ "core.light" ],
 		interfaces: [ "oic.if.baseline" ],
 		discoverable: true,
@@ -81,11 +81,12 @@ if ( device.device.uuid ) {
 		properties: { someValue: 0, someOtherValue: "Helsinki" }
 	} ).then(
 		function( resource ) {
+			console.log( "OCF resource successfully registered" );
 			lightResource = resource;
 
 			// Add event handlers for each supported request type
 			_.each( lightResourceRequestHandlers, function( callback, requestType ) {
-				device.on( requestType, function( request ) {
+				device.server.on( requestType, function( request ) {
 					console.log( "Received request " + JSON.stringify( request, null, 4 ) );
 					callback( request );
 				} );
