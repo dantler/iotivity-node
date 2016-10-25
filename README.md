@@ -7,8 +7,8 @@ This project provides a Javascript API for [OCF][] functionality. The API follow
 <a href="https://travis-ci.org/otcshare/iotivity-node">
 	<img alt="Build Status" src="https://travis-ci.org/otcshare/iotivity-node.svg?branch=master"></img>
 </a>
-<a href='https://coveralls.io/github/otcshare/iotivity-node?branch=backed-object'>
-	<img src='https://coveralls.io/repos/github/otcshare/iotivity-node/badge.svg?branch=backed-object' alt='Coverage Status' />
+<a href='https://coveralls.io/github/otcshare/iotivity-node?branch=new-api'>
+	<img src='https://coveralls.io/repos/github/otcshare/iotivity-node/badge.svg?branch=new-api' alt='Coverage Status' />
 </a>
 
 ## Installation
