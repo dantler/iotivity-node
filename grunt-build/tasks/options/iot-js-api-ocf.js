@@ -14,12 +14,15 @@
 
 var path = require( "path" );
 
+var location = path.resolve( path.join( __dirname, "..", "..", ".." ) );
+
 module.exports = {
 	plain: {
-		interpreter: "node"
+		location: location
 	},
 	coverage: {
-		interpreter: path.resolve(
-			path.join( __dirname, "..", "..", "..", "tests", "run-istanbul.sh" ) )
+		location: location,
+		interpreter:
+			path.resolve( path.join( __dirname, "..", "..", "..", "tests", "run-istanbul.sh" ) )
 	}
 };

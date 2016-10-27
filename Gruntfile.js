@@ -17,6 +17,7 @@ module.exports = function( grunt ) {
 "use strict";
 
 var path = require( "path" );
+var suites;
 
 require( "load-grunt-config" )( grunt, {
 	configPath: [
@@ -26,6 +27,13 @@ require( "load-grunt-config" )( grunt, {
 	init: true
 } );
 
+if ( grunt.option( "ocf-suites" ) ) {
+	suites = grunt.option( "ocf-suites" ).split( "," );
+	grunt.config.set( "iot-js-api-ocf.plain.tests", suites );
+	grunt.config.set( "iot-js-api-ocf.coverage.tests", suites );
+}
+
 require( "load-grunt-tasks" )( grunt );
+grunt.task.loadNpmTasks( "iot-js-api" );
 
 };
