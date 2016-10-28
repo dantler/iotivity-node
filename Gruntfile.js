@@ -27,8 +27,11 @@ require( "load-grunt-config" )( grunt, {
 	init: true
 } );
 
-if ( grunt.option( "ocf-suites" ) ) {
-	suites = grunt.option( "ocf-suites" ).split( "," );
+suites = process.version.match( /v0.10/ ) ? [] :
+	grunt.option( "ocf-suites" ) ?
+		grunt.option( "ocf-suites" ).split( "," ) : undefined;
+
+if ( suites ) {
 	grunt.config.set( "iot-js-api-ocf.plain.tests", suites );
 	grunt.config.set( "iot-js-api-ocf.coverage.tests", suites );
 }
