@@ -6,6 +6,7 @@
 		"internal_octbstack_cflags": [
 			'<!@(echo "-I$(pwd)/deps/iotivity/include/iotivity/resource/csdk/stack/include")',
 			'<!@(echo "-I$(pwd)/deps/iotivity/include/iotivity/resource/c_common")',
+			'<!@(echo "-I$(pwd)/deps/iotivity/include/iotivity/tinycbor")',
 			'-DROUTING_EP'
 		]
 	},

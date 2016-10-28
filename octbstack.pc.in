@@ -4,6 +4,6 @@ includedir=@INCLUDEDIR@
 
 Name: liboctbstack
 Description: iotivity CSDK
-Version: 1.2.0-RC3
+Version: 1.2.0-RC4
 Libs: -L${libdir} -Wl,-rpath ${libdir} -loctbstack @PLATFORM_LIBS@
-Cflags: -I${includedir}/@OCTB_STACK_INCLUDEDIR@ -I${includedir}/@OCTB_CCOMMON_INCLUDEDIR@ -DROUTING_EP
+Cflags: -I${includedir}/@OCTB_STACK_INCLUDEDIR@ -I${includedir}/@OCTB_CCOMMON_INCLUDEDIR@ -I${includedir}/@TINYCBOR_INCLUDEDIR@ -DROUTING_EP
