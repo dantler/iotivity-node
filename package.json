@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "ci": "TESTING=true npm install && grunt testsuite iot-js-api-ocf:plain testdist --ci",
+    "ci-osx": "TESTING=true npm install && grunt testsuite iot-js-api-ocf:plain testdist --suites='Backed Object.js,Callback Exception,Complex Payload,Device Entity Handler,Discovery,Get Request,Interactive Server Startup.js,Load Library.js,Multiple Observers,Observation,Resource Operations.js' --ocf-suites='Structure - OCF.js,Structure - Device.js,Structure - Platform.js,Structure - Client.js,Structure - Server.js,Server - register and unregister resource.js,Retrieve - Resource (Local Error).js' --ci",
     "ci-basic": "TESTING=true npm install && grunt testsuite iot-js-api-ocf:plain testdist --suites='Load Library.js' --ocf-suites='Structure - OCF.js,Structure - Device.js,Structure - Platform.js,Structure - Client.js,Structure - Server.js,Server - register and unregister resource.js,Retrieve - Resource (Local Error).js' --ci",
     "ci-lint": "./dist.sh -r && grunt lint",
     "ci-coverage": "TESTING=true npm install && grunt publish-coverage --ci",

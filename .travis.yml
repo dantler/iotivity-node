@@ -51,13 +51,13 @@ matrix:
       os: linux
       addons: *buildpackages
 
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
+    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci-osx
       os: osx
 
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
+    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-osx
       os: osx
 
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
+    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-osx
       os: osx
 
   allow_failures:
@@ -65,13 +65,13 @@ matrix:
       os: linux
       addons: *buildpackages
 
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
+    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci-osx
       os: osx
 
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
+    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-osx
       os: osx
 
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
+    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-osx
       os: osx
 
 install:
