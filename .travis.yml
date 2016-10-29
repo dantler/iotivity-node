@@ -41,7 +41,7 @@ matrix:
       os: linux
 
     # Allowed failures must be specified twice - once in "include" to have them
-    # run, and again in "allowed_failures" to not have them break the build.
+    # run, and again in "allow_failures" to not have them break the build.
     # Below are the allowed failures:
 
 #    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
