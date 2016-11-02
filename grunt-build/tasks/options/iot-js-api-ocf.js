@@ -13,16 +13,15 @@
 // limitations under the License.
 
 var path = require( "path" );
+var _ = require( "lodash" );
 
-var location = path.resolve( path.join( __dirname, "..", "..", ".." ) );
-
-module.exports = {
-	plain: {
-		location: location
-	},
-	coverage: {
-		location: location,
+var plain = { location: path.resolve( path.join( __dirname, "..", "..", ".." ) ) };
+var coverage = _.extend( {}, plain, {
 		interpreter:
 			path.resolve( path.join( __dirname, "..", "..", "..", "tests", "run-istanbul.sh" ) )
-	}
+} );
+
+module.exports = {
+	plain: { client: plain, server: plain, single: plain },
+	coverage: { client: coverage, server: coverage, single: coverage }
 };
