@@ -5,6 +5,9 @@ language: cpp
 matrix:
   fast_finish: true
   include:
+    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-lint
+      os: linux
+
     - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
       os: linux
       addons: &buildpackages
@@ -17,30 +20,42 @@ matrix:
           - uuid-dev
           - g++-4.8
 
+    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci
+      os: osx
+
     - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
       os: linux
       addons: *buildpackages
+
+    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci
+      os: osx
 
     - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
       os: linux
       addons: *buildpackages
 
+    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
+      os: osx
+
     - env: NODE_VERSION=4.4 TEST_SCRIPT=ci
       os: linux
       addons: *buildpackages
+
+    - env: NODE_VERSION=4.4 TEST_SCRIPT=ci
+      os: osx
 
     - env: NODE_VERSION=4.5 TEST_SCRIPT=ci
       os: linux
       addons: *buildpackages
 
+    - env: NODE_VERSION=4.5 TEST_SCRIPT=ci
+      os: osx
+
     - env: NODE_VERSION=6 TEST_SCRIPT=ci
       os: linux
       addons: *buildpackages
 
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-lint
-      os: linux
-
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
+    - env: NODE_VERSION=6 TEST_SCRIPT=ci
       os: osx
 
     # Allowed failures must be specified twice - once in "include" to have them
@@ -51,28 +66,10 @@ matrix:
       os: linux
       addons: *buildpackages
 
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci-osx
-      os: osx
-
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-osx
-      os: osx
-
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-osx
-      os: osx
-
   allow_failures:
     - env: NODE_VERSION=4.5 TEST_SCRIPT=ci-coverage
       os: linux
       addons: *buildpackages
-
-    - env: NODE_VERSION=0.10 TEST_SCRIPT=ci-osx
-      os: osx
-
-    - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-osx
-      os: osx
-
-    - env: NODE_VERSION=4.0 TEST_SCRIPT=ci-osx
-      os: osx
 
 install:
 - >
